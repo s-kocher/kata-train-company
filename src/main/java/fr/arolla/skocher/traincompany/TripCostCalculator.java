@@ -11,23 +11,25 @@ public class TripCostCalculator {
     }
 
     public int getCost() {
-        if (zoneStart == 3 && (zoneStop == 1 || zoneStop == 2)) {
+        int smallestZone = Math.min(zoneStart, zoneStop);
+        int highestZone  = Math.max(zoneStart, zoneStop);
+
+        if (isInTwoInnerZones(zoneStart) && isInTwoInnerZones(zoneStop)) {
+            return 240;
+        }
+        if (isInTwoInnerZones(smallestZone) && highestZone == 3) {
             return 280;
         }
-        if ((zoneStart == 1 || zoneStart == 2) && zoneStop == 3) {
-            return 280;
-        }
-        if (zoneStart == 4 && (zoneStop == 1 || zoneStop == 2)) {
+        if (isInTwoInnerZones(smallestZone) && highestZone == 4) {
             return 300;
-        }
-        if ((zoneStart == 1 || zoneStart == 2) && zoneStop == 4) {
-            return 300;
-        }
-        if (zoneStart == 3 || zoneStart == 4) {
-            return 200;
         }
 
-        //Within zone 1 or 2
-        return 240;
+        //Within zone 3 or 4
+        return 200;
     }
+
+    private boolean isInTwoInnerZones(int zone) {
+        return zone == 1 || zone == 2;
+    }
+
 }
