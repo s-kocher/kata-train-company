@@ -18,6 +18,10 @@ public class Tap {
         return unixTimestamp;
     }
 
+    public long getCustomerId() {
+        return customerId;
+    }
+
     public Station getStation() {
         return station;
     }

@@ -2,16 +2,26 @@ package fr.arolla.skocher.traincompany.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import fr.arolla.skocher.traincompany.billing.TripCostCalculator;
 
 public class Customer {
 
     final long id;
-    final List<Trip> trips = new ArrayList<>();
+    List<Trip> trips = new ArrayList<>();
 
     public Customer(long id) {
         this.id = id;
+    }
+
+    public Customer(long id, List<Trip> trips) {
+        this(id);
+        this.trips = trips;
+    }
+
+    public void addTrip(Trip trip) {
+        trips.add(trip);
     }
 
     public long getId() {
@@ -34,9 +44,16 @@ public class Customer {
         return totalCost;
     }
 
-    public void addTrip(Trip trip) {
-        trips.add(trip);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return id == customer.id && trips.equals(customer.trips);
     }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, trips);
+    }
 }
