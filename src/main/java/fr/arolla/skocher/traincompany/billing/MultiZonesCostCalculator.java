@@ -1,6 +1,8 @@
-package fr.arolla.skocher.traincompany;
+package fr.arolla.skocher.traincompany.billing;
 
 import java.util.List;
+
+import fr.arolla.skocher.traincompany.domain.Cost;
 
 public class MultiZonesCostCalculator {
 

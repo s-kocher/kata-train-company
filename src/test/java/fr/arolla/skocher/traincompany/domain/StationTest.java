@@ -1,8 +1,10 @@
-package fr.arolla.skocher.traincompany;
+package fr.arolla.skocher.traincompany.domain;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import fr.arolla.skocher.traincompany.domain.Station;
 
 class StationTest {
 

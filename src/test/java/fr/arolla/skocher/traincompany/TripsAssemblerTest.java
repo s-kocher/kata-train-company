@@ -7,6 +7,10 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import fr.arolla.skocher.traincompany.domain.Station;
+import fr.arolla.skocher.traincompany.domain.Tap;
+import fr.arolla.skocher.traincompany.domain.Trip;
+
 public class TripsAssemblerTest {
 
     @Test

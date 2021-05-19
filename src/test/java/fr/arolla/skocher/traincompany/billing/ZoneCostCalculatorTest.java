@@ -1,4 +1,4 @@
-package fr.arolla.skocher.traincompany;
+package fr.arolla.skocher.traincompany.billing;
 
 import java.util.stream.Stream;
 
@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+
+import fr.arolla.skocher.traincompany.billing.ZoneCostCalculator;
 
 public class ZoneCostCalculatorTest {
 

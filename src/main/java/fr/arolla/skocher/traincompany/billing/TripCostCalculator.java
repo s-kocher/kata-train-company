@@ -1,6 +1,8 @@
-package fr.arolla.skocher.traincompany;
+package fr.arolla.skocher.traincompany.billing;
 
-import java.util.List;
+import fr.arolla.skocher.traincompany.domain.Cost;
+import fr.arolla.skocher.traincompany.domain.Station;
+import fr.arolla.skocher.traincompany.domain.Trip;
 
 public class TripCostCalculator {
 

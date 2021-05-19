@@ -1,4 +1,4 @@
-package fr.arolla.skocher.traincompany;
+package fr.arolla.skocher.traincompany.billing;
 
 public class ZoneCostCalculator {
 

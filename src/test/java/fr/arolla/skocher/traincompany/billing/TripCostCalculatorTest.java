@@ -1,8 +1,13 @@
-package fr.arolla.skocher.traincompany;
+package fr.arolla.skocher.traincompany.billing;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import fr.arolla.skocher.traincompany.billing.TripCostCalculator;
+import fr.arolla.skocher.traincompany.domain.Cost;
+import fr.arolla.skocher.traincompany.domain.Station;
+import fr.arolla.skocher.traincompany.domain.Trip;
 
 class TripCostCalculatorTest {
 

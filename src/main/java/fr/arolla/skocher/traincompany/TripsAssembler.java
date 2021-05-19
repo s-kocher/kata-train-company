@@ -3,6 +3,9 @@ package fr.arolla.skocher.traincompany;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.arolla.skocher.traincompany.domain.Tap;
+import fr.arolla.skocher.traincompany.domain.Trip;
+
 public class TripsAssembler {
 
     private final List<Tap> taps;
