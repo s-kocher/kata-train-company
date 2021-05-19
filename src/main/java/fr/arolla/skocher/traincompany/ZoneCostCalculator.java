@@ -1,11 +1,11 @@
 package fr.arolla.skocher.traincompany;
 
-public class TripCostCalculator {
+public class ZoneCostCalculator {
 
     private final int zoneStart;
     private final int zoneStop;
 
-    public TripCostCalculator(int zoneStart, int zoneStop) {
+    public ZoneCostCalculator(int zoneStart, int zoneStop) {
         this.zoneStart = zoneStart;
         this.zoneStop = zoneStop;
     }

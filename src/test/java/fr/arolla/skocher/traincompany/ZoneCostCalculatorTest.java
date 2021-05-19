@@ -3,12 +3,11 @@ package fr.arolla.skocher.traincompany;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class TripCostCalculatorTest {
+public class ZoneCostCalculatorTest {
 
     private static Stream<Arguments> getZoneBillingRules() {
         return Stream.of(
@@ -38,7 +37,7 @@ public class TripCostCalculatorTest {
     @ParameterizedTest(name="Zone start : {0} to zone stop {1} => Cost : {2}")
     @MethodSource(value="getZoneBillingRules")
     public void should_trip_from_a_zone_to_another_zone_has_expected_cost(int zoneStart, int zoneStop, int expectedCost) {
-        TripCostCalculator calculator = new TripCostCalculator(zoneStart, zoneStop);
+        ZoneCostCalculator calculator = new ZoneCostCalculator(zoneStart, zoneStop);
 
         int cost = calculator.getCost();
 
