@@ -14,6 +14,14 @@ public class Customer {
         this.id = id;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public List<Trip> getTrips() {
+        return trips;
+    }
+
     public int getTotalCost() {
         int totalCost = 0;
 
@@ -29,5 +37,6 @@ public class Customer {
     public void addTrip(Trip trip) {
         trips.add(trip);
     }
+
 
 }
