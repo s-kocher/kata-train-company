@@ -16,8 +16,8 @@ public class TripsAssemblerTest {
     @Test
     public void should_return_1_trip_from_2_taps() {
         List<Tap> taps = List.of(
-            new Tap(1572242400, Station.A),
-            new Tap(1572244200, Station.D)
+            new Tap(1572242400, 1, Station.A),
+            new Tap(1572244200, 1, Station.D)
         );
         TripsAssembler tripsAssembler = new TripsAssembler(taps);
 
@@ -29,8 +29,8 @@ public class TripsAssemblerTest {
     @Test
     public void should_return_a_trip_from_2_next_taps() {
         List<Tap> taps = List.of(
-            new Tap(1572282000, Station.D),
-        new Tap(1572283800, Station.A)
+            new Tap(1572282000, 1, Station.D),
+        new Tap(1572283800, 1, Station.A)
         );
         TripsAssembler tripsAssembler = new TripsAssembler(taps);
 
@@ -42,10 +42,10 @@ public class TripsAssemblerTest {
     @Test
     public void should_return_back_and_forth_trips_from_4_taps() {
         List<Tap> taps = List.of(
-            new Tap(1572242400, Station.A),
-            new Tap(1572244200, Station.D),
-            new Tap(1572282000, Station.D),
-            new Tap(1572283800, Station.A)
+            new Tap(1572242400, 1, Station.A),
+            new Tap(1572244200, 1, Station.D),
+            new Tap(1572282000, 1, Station.D),
+            new Tap(1572283800, 1, Station.A)
         );
         TripsAssembler tripsAssembler = new TripsAssembler(taps);
 
@@ -59,9 +59,9 @@ public class TripsAssemblerTest {
     @Test()
     public void should_throw_an_illegal_argument_exception_if_non_pair_number_of_taps() {
         List<Tap> taps = List.of(
-            new Tap(1572242400, Station.A),
-            new Tap(1572244200, Station.D),
-            new Tap(1572282000, Station.D)
+            new Tap(1572242400, 1, Station.A),
+            new Tap(1572244200, 1, Station.D),
+            new Tap(1572282000, 1, Station.D)
         );
         TripsAssembler tripsAssembler = new TripsAssembler(taps);
 
