@@ -1,5 +1,7 @@
 package fr.arolla.skocher.traincompany.domain;
 
+import java.util.Objects;
+
 public class Tap {
 
     private final int unixTimestamp;
@@ -18,5 +20,27 @@ public class Tap {
 
     public Station getStation() {
         return station;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tap tap = (Tap) o;
+        return unixTimestamp == tap.unixTimestamp && customerId == tap.customerId && station == tap.station;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(unixTimestamp, customerId, station);
+    }
+
+    @Override
+    public String toString() {
+        return "Tap{" +
+            "unixTimestamp=" + unixTimestamp +
+            ", customerId=" + customerId +
+            ", station=" + station +
+            '}';
     }
 }
