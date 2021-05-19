@@ -1,12 +1,15 @@
-package fr.arolla.skocher.traincompany.domain;
+package fr.arolla.skocher.traincompany.billing;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
 import fr.arolla.skocher.traincompany.billing.TripCostCalculator;
+import fr.arolla.skocher.traincompany.domain.Customer;
+import fr.arolla.skocher.traincompany.domain.Station;
+import fr.arolla.skocher.traincompany.domain.Trip;
 
-class CustomerTest {
+class CustomerTripsTotalCostTest {
 
     @Test
     public void should_a_customer_with_no_trip_has_a_total_cost_to_0() {
