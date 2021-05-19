@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class Trip {
 
-    private final String stationStart;
-    private final String stationEnd;
+    private final Station stationStart;
+    private final Station stationEnd;
     private final int startedJourneyAt;
 
-    public Trip(String stationStart, String stationEnd, int startedJourneyAt) {
+    public Trip(Station stationStart, Station stationEnd, int startedJourneyAt) {
         this.stationStart = stationStart;
         this.stationEnd = stationEnd;
         this.startedJourneyAt = startedJourneyAt;
@@ -19,7 +19,7 @@ public class Trip {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Trip trip = (Trip) o;
-        return startedJourneyAt == trip.startedJourneyAt && stationStart.equals(trip.stationStart) && stationEnd.equals(trip.stationEnd);
+        return startedJourneyAt == trip.startedJourneyAt && stationStart == trip.stationStart && stationEnd == trip.stationEnd;
     }
 
     @Override

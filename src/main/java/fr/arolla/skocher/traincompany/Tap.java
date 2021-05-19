@@ -3,9 +3,9 @@ package fr.arolla.skocher.traincompany;
 public class Tap {
 
     private final int unixTimestamp;
-    private final String station;
+    private final Station station;
 
-    public Tap(int unixTimestamp, String station) {
+    public Tap(int unixTimestamp, Station station) {
         this.unixTimestamp = unixTimestamp;
         this.station = station;
     }
@@ -14,7 +14,7 @@ public class Tap {
         return unixTimestamp;
     }
 
-    public String getStation() {
+    public Station getStation() {
         return station;
     }
 }
