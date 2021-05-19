@@ -14,6 +14,14 @@ public class Trip {
         this.startedJourneyAt = startedJourneyAt;
     }
 
+    public Station getStationStart() {
+        return stationStart;
+    }
+
+    public Station getStationStop() {
+        return stationStop;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
