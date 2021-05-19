@@ -1,4 +1,4 @@
-#Scenario
+# Scenario
 Our company has recently bought a train company.
 
 The trains run between train stations.
@@ -8,12 +8,12 @@ A train station is geographically situated in a zone, some stations are situated
 Zones are a set of concentric circles which start at the centre of the city.  
 Zone 1 is at the centre of the city and Zone 4 is furthest away from the city.
 
-####Pricing is dependent upon:
+#### Pricing is dependent upon:
 1) Which zone(s) you travel between.
 2) What train stations are situated on a zone boundary, say zones 2 and zone 3, these have a specific pricing rule. The customer is charged the lowest fare, for instance if you are travelling from zone 1 to a station on the boundary of zone 2 and 3 then you will be charged the fare of zone 1 to zone 2.
 3) You are charged per trip.
 
-#Stations and zones
+# Stations and zones
 Zone 1 stations:
 - A
 - B
@@ -34,7 +34,7 @@ Zone 4 stations:
 - H
 - I
 
-#Pricing
+# Pricing
 We charge in euros (€), a euro has 100 cents.
 1) Travel within zones 1 and 2: €2.40 per trip.
 2) Travel within zones 3 and 4: €2.00 per trip.
@@ -44,7 +44,7 @@ We charge in euros (€), a euro has 100 cents.
 6) Travel from zone 1 or 2, zone 4 to: €3.00 per trip.
 7) If there is the possibility of two prices then we must charge the customer the lowest amount and reflect this in the pricing information.
 
-#Test objective
+# Test objective
 We bill customers at the end of the day, based on an input file which contains all customer journeys. 
 You need to write a process that from the input file passed in at the command line will generate a summary of the customers trips and total costings.  
 
@@ -61,7 +61,7 @@ You can assume that:
 2) The customers first tap represents an entry at the beginning of the journey and the second tap their exit at the end of the journey.
 3) A customer may have multiple journeys in a day.
 
-#Input File explanation
+# Input File explanation
 A snippet of input file has the following format:
 ```json
 {
@@ -95,7 +95,7 @@ This represents customer who had id 1 taking a journey from station A at the uni
 The customer then returns in the opposite direction at 2019-10-28T17:30+00:00 (1572282000).
 
 
-#Output File explanation
+# Output File explanation
 The output file has the following format:
 ```json
 {
@@ -139,13 +139,13 @@ For each of the customers' trips we output the following:
 6) "zoneTo" - the zone which the user was charged to.
 
 
-#Expectations
+# Expectations
 1) Be aware that your sample file has the main requirements only and we expect you to test all the requirements based on the requirements given.  We have a test file, which has all the scenarios covered by these requirements, if your submission when passed our test file does not pass tests which we will run on your output file (differences in whitespace and ordering are of course permitted - as per the JSON standard), then we will not review the code and will reply to the recruiter stating that it does not meet the functional requirements.  For obvious reasons we will not share our test file, please do not ask.  The aim of this test is not to catch you out, it is to validate that you can take requirements and have the skills to create a professional program.
 2) We do not require elaborate console output, and want to see how YOU write code.  Please do not use dependency injection frameworks, aspect oriented frameworks, such as spring or any other code generation frameworks such as Lombok.  Significant consideration is given to how well you can meet requirements.
 3) We are looking for a professional object oriented submission in Java or Kotlin, with unit tests which demonstrates your skills, of how you would deliver a project at work. An important point is it must build in any IDE by using a either gradle or maven to define the build process and any dependencies. If we cannot build it, it will fail.
 4) We expect your main method to take 2 input parameters, the first is the input file path and the second is the output file path.  No other inputs should be required to run your program.
 
-#Notes if invited to interview
+# Notes if invited to interview
 1) You will be given a coding test based on your submission, then you will be asked technical questions.
 2) The interview will be conducted in English, as we work globally commmunicating mainly in English.  We all find interviews stressful, and there will be a developer present who can speak in fluent French if we need to translate specifics.
 
