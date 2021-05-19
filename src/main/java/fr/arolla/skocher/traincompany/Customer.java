@@ -17,7 +17,7 @@ public class Customer {
 
         for (Trip trip : trips) {
             TripCostCalculator calculator = new TripCostCalculator(trip);
-            int costTrip = calculator.getCost();
+            int costTrip = calculator.getCost().getCostInCents();
             totalCost += costTrip;
         }
 

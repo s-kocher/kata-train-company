@@ -19,7 +19,7 @@ class CustomerTest {
     public void should_a_customer_with_a_single_trip_has_a_total_cost_equal_to_the_trip_s_cost() {
         Customer customer = new Customer(1);
         Trip trip = new Trip(Station.A, Station.B, 1);
-        int tripCost = new TripCostCalculator(trip).getCost();
+        int tripCost = new TripCostCalculator(trip).getCost().getCostInCents();
 
         customer.addTrip(trip);
         int totalCost = customer.getTotalCost();
@@ -34,8 +34,8 @@ class CustomerTest {
         Trip trip1 = new Trip(Station.A, Station.B, 1);
         Trip trip2 = new Trip(Station.B, Station.A, 2);
 
-        int tripCost1 = new TripCostCalculator(trip1).getCost();
-        int tripCost2 = new TripCostCalculator(trip2).getCost();
+        int tripCost1 = new TripCostCalculator(trip1).getCost().getCostInCents();
+        int tripCost2 = new TripCostCalculator(trip2).getCost().getCostInCents();
         int expectedCost = tripCost1 + tripCost2;
 
         customer.addTrip(trip1);

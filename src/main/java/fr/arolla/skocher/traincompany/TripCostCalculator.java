@@ -10,7 +10,7 @@ public class TripCostCalculator {
         this.trip = trip;
     }
 
-    public int getCost() {
+    public Cost getCost() {
         Station stationStart = trip.getStationStart();
         Station stationStop  = trip.getStationStop();
 

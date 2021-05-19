@@ -12,23 +12,24 @@ public class MultiZonesCostCalculator {
         this.zonesStop = zonesStop;
     }
 
-    public int getCost() {
-        int smallerCost = -1;
+    public Cost getCost() {
+        int smallestCostInCents = -1;
+
+        Cost cost = null;
 
         for (int zoneStart : zonesStart) {
             for (int zoneStop : zonesStop) {
                 ZoneCostCalculator singleZoneCalculator = new ZoneCostCalculator(zoneStart, zoneStop);
-                int cost = singleZoneCalculator.getCost();
+                int currentCostInCents = singleZoneCalculator.getCost();
 
-                if (smallerCost == -1) {
-                    smallerCost = cost;
-                } else if (smallerCost > cost) {
-                    smallerCost = cost;
+                if (smallestCostInCents == -1 || smallestCostInCents > currentCostInCents) {
+                    smallestCostInCents = currentCostInCents;
+                    cost = new Cost(currentCostInCents, zoneStart, zoneStop);
                 }
             }
         }
 
-        return smallerCost;
+        return cost;
     }
 
 }
