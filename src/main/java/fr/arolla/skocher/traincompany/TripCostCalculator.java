@@ -12,11 +12,11 @@ public class TripCostCalculator {
 
     public Cost getCost() {
         Station stationStart = trip.getStationStart();
-        Station stationStop  = trip.getStationStop();
+        Station stationEnd  = trip.getStationEnd();
 
         MultiZonesCostCalculator calculator = new MultiZonesCostCalculator(
             stationStart.getZones(),
-            stationStop.getZones()
+            stationEnd.getZones()
         );
 
         return calculator.getCost();

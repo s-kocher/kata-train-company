@@ -34,10 +34,10 @@ public class ZoneCostCalculatorTest {
         );
     }
 
-    @ParameterizedTest(name="Zone start : {0} to zone stop {1} => Cost : {2}")
+    @ParameterizedTest(name="Zone start : {0} to zone end {1} => Cost : {2}")
     @MethodSource(value="getZoneBillingRules")
-    public void should_trip_from_a_zone_to_another_zone_has_expected_cost(int zoneStart, int zoneStop, int expectedCost) {
-        ZoneCostCalculator calculator = new ZoneCostCalculator(zoneStart, zoneStop);
+    public void should_trip_from_a_zone_to_another_zone_has_expected_cost(int zoneStart, int zoneEnd, int expectedCost) {
+        ZoneCostCalculator calculator = new ZoneCostCalculator(zoneStart, zoneEnd);
 
         int cost = calculator.getCost();
 

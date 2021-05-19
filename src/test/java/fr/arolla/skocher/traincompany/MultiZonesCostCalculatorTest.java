@@ -28,25 +28,25 @@ public class MultiZonesCostCalculatorTest {
         );
     }
 
-    @ParameterizedTest(name="Multi zones start : {0} to multi zones stop {1} => Cost : {2}")
+    @ParameterizedTest(name="Multi zones start : {0} to multi zones end {1} => Cost : {2}")
     @MethodSource(value="getZoneBillingRules")
-    public void should_trip_from_multi_zone_station_to_another_multi_zone_station_has_expected_cost(List<Integer> zonesStart, List<Integer> zonesStop, int expectedCost) {
-        MultiZonesCostCalculator calculator = new MultiZonesCostCalculator(zonesStart, zonesStop);
+    public void should_trip_from_multi_zone_station_to_another_multi_zone_station_has_expected_cost(List<Integer> zonesStart, List<Integer> zonesEnd, int expectedCost) {
+        MultiZonesCostCalculator calculator = new MultiZonesCostCalculator(zonesStart, zonesEnd);
 
         Cost cost = calculator.getCost();
 
         Assertions.assertEquals(expectedCost, cost.getCostInCents());
     }
 
-    @ParameterizedTest(name="Multi zones start : {0} to multi zones stop {1} => Charged zones : {3}-{4}")
+    @ParameterizedTest(name="Multi zones start : {0} to multi zones end {1} => Charged zones : {3}-{4}")
     @MethodSource(value="getZoneBillingRules")
-    public void should_trip_from_multi_zone_station_to_another_multi_zone_station_has_expected_charged_zones(List<Integer> zonesStart, List<Integer> zonesStop, int expectedCost, int expectedChargedZoneStart, int expectedChargedZoneStop) {
-        MultiZonesCostCalculator calculator = new MultiZonesCostCalculator(zonesStart, zonesStop);
+    public void should_trip_from_multi_zone_station_to_another_multi_zone_station_has_expected_charged_zones(List<Integer> zonesStart, List<Integer> zonesEnd, int expectedCost, int expectedChargedZoneStart, int expectedChargedZoneEnd) {
+        MultiZonesCostCalculator calculator = new MultiZonesCostCalculator(zonesStart, zonesEnd);
 
         Cost cost = calculator.getCost();
 
         Assertions.assertEquals(expectedChargedZoneStart, cost.getZoneChargedStart());
-        Assertions.assertEquals(expectedChargedZoneStop, cost.getZoneChargedStop());
+        Assertions.assertEquals(expectedChargedZoneEnd, cost.getZoneChargedEnd());
     }
 
 

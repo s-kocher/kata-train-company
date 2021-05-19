@@ -3,18 +3,18 @@ package fr.arolla.skocher.traincompany;
 public class ZoneCostCalculator {
 
     private final int zoneStart;
-    private final int zoneStop;
+    private final int zoneEnd;
 
-    public ZoneCostCalculator(int zoneStart, int zoneStop) {
+    public ZoneCostCalculator(int zoneStart, int zoneEnd) {
         this.zoneStart = zoneStart;
-        this.zoneStop = zoneStop;
+        this.zoneEnd = zoneEnd;
     }
 
     public int getCost() {
-        int smallestZone = Math.min(zoneStart, zoneStop);
-        int highestZone  = Math.max(zoneStart, zoneStop);
+        int smallestZone = Math.min(zoneStart, zoneEnd);
+        int highestZone  = Math.max(zoneStart, zoneEnd);
 
-        if (isInTwoInnerZones(zoneStart) && isInTwoInnerZones(zoneStop)) {
+        if (isInTwoInnerZones(zoneStart) && isInTwoInnerZones(zoneEnd)) {
             return 240;
         }
         if (isInTwoInnerZones(smallestZone) && highestZone == 3) {

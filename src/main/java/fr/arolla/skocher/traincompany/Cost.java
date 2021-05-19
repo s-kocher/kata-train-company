@@ -4,12 +4,12 @@ public class Cost {
 
     int costInCents;
     int zoneChargedStart;
-    int zoneChargedStop;
+    int zoneChargedEnd;
 
-    public Cost(int costInCents, int zoneChargedStart, int zoneChargedStop) {
+    public Cost(int costInCents, int zoneChargedStart, int zoneChargedEnd) {
         this.costInCents = costInCents;
         this.zoneChargedStart = zoneChargedStart;
-        this.zoneChargedStop = zoneChargedStop;
+        this.zoneChargedEnd = zoneChargedEnd;
     }
 
     public int getCostInCents() {
@@ -20,8 +20,8 @@ public class Cost {
         return zoneChargedStart;
     }
 
-    public int getZoneChargedStop() {
-        return zoneChargedStop;
+    public int getZoneChargedEnd() {
+        return zoneChargedEnd;
     }
 
 }
