@@ -1,3 +1,5 @@
+package fr.arolla.skocher.traincompany;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -5,6 +7,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import fr.arolla.skocher.traincompany.DailyCustomersExtractor;
 import fr.arolla.skocher.traincompany.domain.Customer;
 import fr.arolla.skocher.traincompany.domain.Station;
 import fr.arolla.skocher.traincompany.domain.Tap;
