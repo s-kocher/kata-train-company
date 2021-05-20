@@ -27,19 +27,6 @@ public class TripsAssemblerTest {
     }
 
     @Test
-    public void should_return_a_trip_from_2_next_taps() {
-        List<Tap> taps = List.of(
-            new Tap(1572282000, 1, Station.D),
-            new Tap(1572283800, 1, Station.A)
-        );
-        TripsAssembler tripsAssembler = new TripsAssembler(taps);
-
-        Trip trip = tripsAssembler.getTrips().get(0);
-
-        assertEquals(new Trip(Station.D, Station.A, 1572282000), trip);
-    }
-
-    @Test
     public void should_return_back_and_forth_trips_from_4_taps() {
         List<Tap> taps = List.of(
             new Tap(1572242400, 1, Station.A),
