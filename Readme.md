@@ -1,7 +1,10 @@
-# How to use
+# How to build 
+- Require Java 11 & Maven 3
 - Clone repository and open shell in repository folder
 - Run command `mvn clean verify` in the root directory
-- Run command `java -jar target\kata-train-company-1.0.0-SNAPSHOT-jar-with-dependencies.jar {input_taps.json} {output_summary.json}`  
+
+# How to use
+Run command `java -jar target\kata-train-company-1.0.0-SNAPSHOT-jar-with-dependencies.jar {input_taps.json} {output_summary.json}`  
 Example : `java -jar target\kata-train-company-1.0.0-SNAPSHOT-jar-with-dependencies.jar src\test\resources\CandidateInputExample.json testouput.json`
 
 
