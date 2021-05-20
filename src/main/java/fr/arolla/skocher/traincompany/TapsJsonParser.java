@@ -1,5 +1,7 @@
 package fr.arolla.skocher.traincompany;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -13,31 +15,38 @@ import fr.arolla.skocher.traincompany.domain.Tap;
 
 public class TapsJsonParser {
 
-    private final String jsonTaps;
+    private final ObjectMapper mapper = new ObjectMapper();
+    private final JsonNode rootNode;
+
+    public TapsJsonParser(File fileJsonTaps) {
+        try {
+            rootNode = mapper.readTree(fileJsonTaps);
+        } catch (IOException e) {
+            throw new IllegalStateException("Json processing error when parsing taps json file " + fileJsonTaps.getAbsolutePath(), e);
+        }
+    }
 
     public TapsJsonParser(String jsonTaps) {
-        this.jsonTaps = jsonTaps;
+        try {
+            rootNode = mapper.readTree(jsonTaps);
+        } catch (JsonProcessingException e) {
+            throw new IllegalStateException("Json processing error when parsing taps json content", e);
+        }
     }
 
     public List<Tap> parse() {
         List<Tap> taps = new ArrayList<>();
 
         ObjectMapper mapper = new ObjectMapper();
-        try {
-            JsonNode rootNode = mapper.readTree(jsonTaps);
-            JsonNode tapsNode = rootNode.get("taps");
-            if (tapsNode == null) {
-                return taps;
-            }
+        JsonNode tapsNode = rootNode.get("taps");
+        if (tapsNode == null) {
+            return taps;
+        }
 
-            Iterator<JsonNode> tapNodesIterator = tapsNode.elements();
-            while(tapNodesIterator.hasNext()) {
-                JsonNode tapNode = tapNodesIterator.next();
-                taps.add(parseTapJson(tapNode));
-            }
-
-        } catch (JsonProcessingException e) {
-            throw new IllegalStateException("Json processing error when parsing taps json content", e);
+        Iterator<JsonNode> tapNodesIterator = tapsNode.elements();
+        while(tapNodesIterator.hasNext()) {
+            JsonNode tapNode = tapNodesIterator.next();
+            taps.add(parseTapJson(tapNode));
         }
 
         return taps;

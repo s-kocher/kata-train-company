@@ -1,6 +1,7 @@
 package fr.arolla.skocher.traincompany;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.List;
 
 import com.fasterxml.jackson.core.JsonGenerator;
@@ -21,14 +22,32 @@ import fr.arolla.skocher.traincompany.domain.Trip;
 public class CustomersSummariesJsonExporter {
 
     private final List<Customer> customers;
+    private final ObjectMapper mapper = getObjectMapper();
 
     public CustomersSummariesJsonExporter(List<Customer> customers) {
         this.customers = customers;
     }
 
-    public JsonNode getJsonNode() {
-        ObjectMapper mapper = getObjectMapper();
+    public void fillJsonOutputStream(OutputStream os) {
+        String json;
+        try {
+            JsonNode jsonNode = getJsonNode();
 
+            mapper.writerWithDefaultPrettyPrinter().writeValue(os, jsonNode);
+        } catch (JsonProcessingException e) {
+            throw new IllegalStateException("Error processing customer to json", e);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                os.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public JsonNode getJsonNode() {
         //Wrap customers list in a CustomersSummaries object
         CustomerSummaries customersSummaries = new CustomerSummaries(customers);
 
