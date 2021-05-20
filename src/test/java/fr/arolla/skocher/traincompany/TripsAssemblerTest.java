@@ -30,7 +30,7 @@ public class TripsAssemblerTest {
     public void should_return_a_trip_from_2_next_taps() {
         List<Tap> taps = List.of(
             new Tap(1572282000, 1, Station.D),
-        new Tap(1572283800, 1, Station.A)
+            new Tap(1572283800, 1, Station.A)
         );
         TripsAssembler tripsAssembler = new TripsAssembler(taps);
 
