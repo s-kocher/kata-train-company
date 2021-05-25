@@ -18,7 +18,7 @@ public enum Station {
 
     private final List<Integer> zones;
 
-    Station(int ...zones) {
+    Station(int... zones) {
         this.zones = Arrays.stream(zones)
             .boxed()
             .collect(Collectors.toList());
