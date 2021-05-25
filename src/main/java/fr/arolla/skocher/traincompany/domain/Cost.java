@@ -1,10 +1,10 @@
 package fr.arolla.skocher.traincompany.domain;
 
-public class Cost {
+public final class Cost {
 
-    int costInCents;
-    int zoneChargedStart;
-    int zoneChargedEnd;
+    final int costInCents;
+    final int zoneChargedStart;
+    final int zoneChargedEnd;
 
     public Cost(int costInCents, int zoneChargedStart, int zoneChargedEnd) {
         this.costInCents = costInCents;
